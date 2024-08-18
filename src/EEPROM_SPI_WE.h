@@ -112,11 +112,12 @@ class EEPROM_SPI_WE
         uint8_t eepromReadStatusReg(); 
         void setSPIClockSpeed(unsigned long clock);
         void setSmallEEPROM();
+
+		  SPIClass *_spi;
+		  uint16_t csPin;
             
     protected:
-        SPIClass *_spi;
         SPISettings mySPISettings;
-        uint16_t csPin;
         uint16_t wpPin;
 		uint32_t spiClock;
         uint16_t pageSize;
